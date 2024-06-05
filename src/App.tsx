@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Link,
   Navigate,
 } from "react-router-dom";
 
@@ -17,6 +18,14 @@ import ProfileScreen from "./pages/Profile";
 function App() {
   return (
     <Router>
+      <nav>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+      </nav>
       <main className="container content">
         <Routes>
           <Route path="/login" element={<Login />} />

@@ -12,6 +12,7 @@ import authService from "../../services/AuthService";
 function* userLogin(action: { payload: any }): SagaIterator {
   try {
     const response = yield call(authService.login, action.payload);
+    console.log("pokusaj logovanja : ", response);
 
     yield put(setUser(response));
   } catch (error) {
