@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectAuthUser } from "../store/auth/selectors";
 import { performRegisterUser } from "../store/auth/slice";
+import { User } from "../types/backend";
 
 const Register = () => {
   // const [customError, setCustomError] = useState<string | null>(null);

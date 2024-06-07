@@ -35,7 +35,7 @@ function App() {
             <Route path="/user-profile" element={<ProfileScreen />} />
           </Route>
           <Route path="/" element={<HomeScreen />} />
-          {/* <Route path="movies" element={<MoviesPage />} /> */}
+          <Route path="movies" element={<MoviesPage />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
