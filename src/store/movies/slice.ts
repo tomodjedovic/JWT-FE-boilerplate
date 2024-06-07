@@ -1,21 +1,21 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const middlewareActions = {
-    performGetMovies:()=>{}
-}
+  performGetMovies: () => {},
+};
 export const movieSlice = createSlice({
-    name: "movie",
-    initialState:{
-        allMovies:[]
+  name: "movie",
+  initialState: {
+    allMovies: [],
+  },
+  reducers: {
+    setAllMovies: (state, action) => {
+      state.allMovies = action.payload;
     },
-    reducers: {
-       ...middlewareActions
-
-    },
+    ...middlewareActions,
+  },
 });
 
-export const {
-    performGetMovies
-} = movieSlice.actions;
+export const { performGetMovies, setAllMovies } = movieSlice.actions;
 
 export default movieSlice.reducer;

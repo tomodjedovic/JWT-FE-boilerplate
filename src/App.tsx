@@ -14,6 +14,7 @@ import Register from "./pages/Register";
 import HomeScreen from "./pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProfileScreen from "./pages/Profile";
+import MoviesPage from "./pages/Movies";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/user-profile" element={<ProfileScreen />} />
           </Route>
           <Route path="/" element={<HomeScreen />} />
+          {/* <Route path="movies" element={<MoviesPage />} /> */}
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

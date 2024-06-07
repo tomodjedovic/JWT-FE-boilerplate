@@ -24,7 +24,9 @@ function* getUserProfile(): SagaIterator {
   try {
     const response = yield call(authService.getUserProfile);
     yield put(setUser(response));
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export function* watchUserLogin(): SagaIterator {
