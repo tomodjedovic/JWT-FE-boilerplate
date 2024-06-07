@@ -20,10 +20,12 @@ const MoviesPage = () => {
 
   return (
     <div>
-      {/* <h1>Movies</h1>
-      {allMoviesArr.map((movie: Movie) => {
+      {
+        <h1>Movies</h1>
+        /* {allMoviesArr.map((movie: Movie) => {
         <h3 key={movie.id}>MOVIE</h3>;
-      })} */}
+      })} */
+      }
     </div>
   );
 };
