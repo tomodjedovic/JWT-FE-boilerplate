@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { performGetMovies } from "../store/movies/slice";
 import { selectAllMovies } from "../store/movies/selectors";
-
 import { Movie } from "../types/backend";
 
 const MoviesPage = () => {
@@ -12,18 +10,17 @@ const MoviesPage = () => {
   console.log("log iz moviePage :", allMoviesArr);
 
   useEffect(() => {
-    async function fetchMovies() {
-      dispatch(performGetMovies());
-    }
-    fetchMovies();
+    dispatch(performGetMovies());
   }, []);
 
   return (
     <div>
-      {/* <h1>Movies</h1>
-      {allMoviesArr.map((movie: Movie) => {
-        <h3 key={movie.id}>MOVIE</h3>;
-      })} */}
+      <h1>Movies</h1>
+      <ul>
+        {allMoviesArr?.map((movie: Movie) => (
+          <li>{movie.title}</li>
+        ))}
+      </ul>
     </div>
   );
 };

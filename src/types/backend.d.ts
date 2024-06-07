@@ -1,5 +1,4 @@
 import { QueryMethod } from "@testing-library/react";
-import { JsxElement } from "typescript";
 
 interface User {
   id?: string;
