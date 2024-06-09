@@ -1,3 +1,4 @@
+import { User } from "../../types/backend";
 const selectAuthUser = (state: { auth: { user: User } }) => state.auth.user;
 const selectUserTokenUser = (state: { auth: { userToken: User } }) =>
   state.auth.userToken;

@@ -10,7 +10,9 @@ const MovieRow: React.FC<movieProps> = ({ data }) => {
     return (
       <div>
         <h3>Title : {data.title}</h3>
-        <h4>Ditector : {data.director.name}</h4>
+        <h4>
+          Ditector : {data.director.name} {data.director.surname}
+        </h4>
       </div>
     );
   } else {

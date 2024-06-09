@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { User } from "../../types/backend";
 
 const userToken = localStorage.getItem("userToken")
   ? localStorage.getItem("userToken")
@@ -9,7 +10,6 @@ const middlewareActions = {
   performRegisterUser: (_state: any, action: PayloadAction<User>) => {},
   performGetUserProfile: () => {},
 };
-
 
 export const authSlice = createSlice({
   name: "auth",

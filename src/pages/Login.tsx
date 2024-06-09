@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { User } from "../types/backend";
 
 import { selectAuthUser } from "../store/auth/selectors";
 import { performUserLogin } from "../store/auth/slice";

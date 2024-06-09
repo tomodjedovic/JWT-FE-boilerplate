@@ -1,3 +1,4 @@
+import { User } from "../types/backend";
 import apiService, { ApiService } from "./ApiService";
 import { AxiosInstance } from "axios";
 
@@ -9,7 +10,7 @@ class AuthService {
     this.apiService = apiService;
     this.client = apiService.api;
   }
-  login = async (payload: any) => {
+  login = async (payload: User) => {
     const response = await this.client.post("/auth/signin", payload);
 
     const userToken = response.data.token;

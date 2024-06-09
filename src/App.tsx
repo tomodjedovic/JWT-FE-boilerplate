@@ -15,17 +15,18 @@ import HomeScreen from "./pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProfileScreen from "./pages/Profile";
 import MoviesPage from "./pages/Movies";
+import SingleMovie from "./pages/SingleMovie";
 
 function App() {
   return (
     <Router>
       <nav>
-        <li>
+        {/* <li>
           <Link to="/login">Login</Link>
         </li>
         <li>
           <Link to="/register">Register</Link>
-        </li>
+        </li> */}
       </nav>
       <main className="container content">
         <Routes>
@@ -36,6 +37,7 @@ function App() {
           </Route>
           <Route path="/" element={<HomeScreen />} />
           <Route path="movies" element={<MoviesPage />} />
+          <Route path="movies/:id" element={<SingleMovie />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

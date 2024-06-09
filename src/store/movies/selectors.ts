@@ -1,6 +1,9 @@
 import { Movie } from "../../types/backend";
 
-const selectAllMovies = (state: { movie: { allMovies: Movie } }) =>
+const selectAllMovies = (state: { movie: { allMovies: Movie[] } }) =>
   state.movie.allMovies;
 
-export { selectAllMovies };
+const selectSingleMovie = (state: { movie: { movie: Movie } }) =>
+  state.movie.movie;
+
+export { selectAllMovies, selectSingleMovie };

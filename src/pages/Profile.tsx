@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 const ProfileScreen = () => {
   const userData = useSelector(selectAuthUser);
+  console.log("log iz profilscreen", userData);
 
   const dispatch = useDispatch();
 

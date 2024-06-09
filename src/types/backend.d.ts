@@ -1,5 +1,4 @@
 import { QueryMethod } from "@testing-library/react";
-import { JsxElement } from "typescript";
 
 interface User {
   id?: string;
@@ -7,6 +6,19 @@ interface User {
   email: string;
   password: string;
   confirmPassword?: string;
+}
+interface Genre {
+  id: number;
+  name: string;
+}
+interface Creator {
+  id: number;
+  name: string;
+}
+interface Director {
+  id: number;
+  name: any;
+  surname: any;
 }
 
 interface Movie {
@@ -20,19 +32,7 @@ interface Movie {
   duration: string;
   creator_id: number;
   director_id: number;
-  genres: [
-    {
-      id: number;
-      name: string;
-    }
-  ];
-  creator: {
-    id: number;
-    name: string;
-  };
-  director: {
-    id: number;
-    name: string;
-    surname: string;
-  };
+  genres: Genre[];
+  creator: Creator;
+  director: Director;
 }

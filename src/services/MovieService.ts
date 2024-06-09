@@ -1,6 +1,7 @@
 import { actionChannel } from "redux-saga/effects";
 import apiService, { ApiService } from "./ApiService";
 import { AxiosInstance } from "axios";
+import { Movie } from "../types/backend";
 
 class MovieService {
   private apiService: ApiService;
@@ -12,19 +13,21 @@ class MovieService {
   }
   getAllMovies = async () => {
     const response = await this.client.get("/movies");
-    console.log("log iz servisa :", response);
+
     return response.data.data;
   };
 
   getSingleMovie = async (payload: any) => {
+    console.log("dfd", payload);
     const response = await this.client.get(`/movies/${payload}`);
-    return response;
+    console.log("log iz servisa", response);
+    return response.data;
   };
 
-  deleteMovie = async (payload: any) => {
-    const response = await this.client.delete(`/movies${payload}`);
+  deleteMovie = async (payload: number) => {
+    const response = await this.client.delete(`/movies/${payload}`);
   };
-  createMovie = async (payload: any) => {};
+  createMovie = async (payload: Movie) => {};
 }
 
 const movieService = new MovieService(apiService);
