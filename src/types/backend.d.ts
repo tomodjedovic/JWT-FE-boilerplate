@@ -19,6 +19,10 @@ interface Director {
   id: number;
   name: any;
   surname: any;
+  image?: string;
+  date_of_birth?: string;
+  creator_id?: number;
+  movies: Partial<Movie>[];
 }
 
 interface Movie {

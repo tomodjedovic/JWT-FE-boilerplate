@@ -7,8 +7,9 @@ import {
 } from "../store/movies/slice";
 import { selectSingleMovie } from "../store/movies/selectors";
 import { selectAuthUser } from "../store/auth/selectors";
+import LayOutLoggedIn from "../components/LayOut-LoggedIn";
 
-const SingleMovie = () => {
+const SingleMovie: React.FC = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const SingleMovie = () => {
 
   return (
     <div>
+      <header>{<LayOutLoggedIn />}</header>
       <h1>Single Movie {id}</h1>
 
       <h2>{myMovie.title}</h2>
@@ -35,7 +37,13 @@ const SingleMovie = () => {
       <h3>
         Director : {myMovie.director?.name} {myMovie.director?.surname}
       </h3>
-      <h3>Creator : {myMovie.creator?.name}</h3>
+      <h4>
+        Genres :{" "}
+        {myMovie.genres?.map((genre) => (
+          <span key={genre?.id}> {genre?.name} , </span>
+        ))}
+      </h4>
+      <h4>Creator : {myMovie.creator?.name}</h4>
       <p>Duration : {myMovie.duration}</p>
       <p>Description : {myMovie.description}</p>
       <p>Date : {myMovie.release_date}</p>

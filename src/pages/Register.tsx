@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { selectAuthUser } from "../store/auth/selectors";
 import { performRegisterUser } from "../store/auth/slice";
 import { User } from "../types/backend";
+import LayOutNotLoggedIn from "../components/LayOut-NotLogedIn";
 
 const Register = () => {
   // const [customError, setCustomError] = useState<string | null>(null);
@@ -39,59 +40,63 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={submitForm}>
-      <div className="form-group">
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          className="form-input"
-          value={newUser.name}
-          onChange={(event) =>
-            setNewUser({ ...newUser, name: event.target.value })
-          }
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          className="form-input"
-          value={newUser.email}
-          onChange={(event) =>
-            setNewUser({ ...newUser, email: event.target.value })
-          }
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          className="form-input"
-          value={newUser.password}
-          onChange={(event) =>
-            setNewUser({ ...newUser, password: event.target.value })
-          }
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Confirm Password</label>
-        <input
-          type="password"
-          className="form-input"
-          value={newUser.confirmPassword}
-          onChange={(event) =>
-            setNewUser({ ...newUser, confirmPassword: event.target.value })
-          }
-          required
-        />
-      </div>
-      <button type="submit" className="button">
-        Register
-      </button>
-    </form>
+    <>
+      <header>{<LayOutNotLoggedIn />}</header>
+
+      <form onSubmit={submitForm}>
+        <div className="form-group">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            className="form-input"
+            value={newUser.name}
+            onChange={(event) =>
+              setNewUser({ ...newUser, name: event.target.value })
+            }
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            className="form-input"
+            value={newUser.email}
+            onChange={(event) =>
+              setNewUser({ ...newUser, email: event.target.value })
+            }
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            className="form-input"
+            value={newUser.password}
+            onChange={(event) =>
+              setNewUser({ ...newUser, password: event.target.value })
+            }
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Confirm Password</label>
+          <input
+            type="password"
+            className="form-input"
+            value={newUser.confirmPassword}
+            onChange={(event) =>
+              setNewUser({ ...newUser, confirmPassword: event.target.value })
+            }
+            required
+          />
+        </div>
+        <button type="submit" className="button">
+          Register
+        </button>
+      </form>
+    </>
   );
 };
 

@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Movie } from "../../types/backend";
 
 const middlewareActions = {
   performGetMovies: () => {},
@@ -12,6 +11,7 @@ export const movieSlice = createSlice({
   initialState: {
     allMovies: [],
     movie: {},
+    movieSearch: "",
   },
   reducers: {
     setAllMovies: (state, action) => {
@@ -19,6 +19,10 @@ export const movieSlice = createSlice({
     },
     setMovie: (state, action) => {
       state.movie = action.payload;
+    },
+    setMovieSearch: (state, action) => {
+      state.movieSearch = action.payload;
+      console.log("log iz slice :", action.payload);
     },
     ...middlewareActions,
   },
@@ -28,6 +32,7 @@ export const {
   performGetMovies,
   setAllMovies,
   setMovie,
+  setMovieSearch,
   performGetSingleMovie,
   performDeleteMovie,
 } = movieSlice.actions;

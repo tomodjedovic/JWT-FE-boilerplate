@@ -18,7 +18,6 @@ class MovieService {
   };
 
   getSingleMovie = async (payload: any) => {
-    console.log("dfd", payload);
     const response = await this.client.get(`/movies/${payload}`);
     console.log("log iz servisa", response);
     return response.data;

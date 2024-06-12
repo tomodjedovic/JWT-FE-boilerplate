@@ -3,6 +3,7 @@ import "../styles/profile.css";
 import { selectAuthUser } from "../store/auth/selectors";
 import { performGetUserProfile } from "../store/auth/slice";
 import { useEffect } from "react";
+import LayOutLoggedIn from "../components/LayOut-LoggedIn";
 
 const ProfileScreen = () => {
   const userData = useSelector(selectAuthUser);
@@ -16,6 +17,7 @@ const ProfileScreen = () => {
 
   return (
     <div>
+      <header>{<LayOutLoggedIn />}</header>
       {userData?.name && (
         <figure>{userData?.name.charAt(0).toUpperCase()}</figure>
       )}
